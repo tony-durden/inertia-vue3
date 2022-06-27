@@ -96,7 +96,8 @@ export default {
 };
 </script>
 ```
-### Edit `webpack.mix.js`
+### Edit Webpack mix configuration
+path: `webpack.mix.js`
 ```js
 mix.js('resources/js/app.js', 'public/js')
     // Add vue
