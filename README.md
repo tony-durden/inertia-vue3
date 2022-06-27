@@ -13,7 +13,10 @@ composer require inertiajs/inertia-laravel
 ````
 
 #### Setup Root Template
-````php
+Next, setup the root template that will be loaded on the first page visit. This will be used to load your site assets (CSS and JavaScript), and will also contain a root `<div>` to boot your JavaScript application in.
+
+rename root file: `/resources/app.blade.php`
+````jsx
 <!DOCTYPE html>
 <html>
   <head>
@@ -74,16 +77,15 @@ createInertiaApp({
   },
 })
 ````
-### Create Pages directory `/resources/js/Pages/Home.vue`
+### Create Pages directory
+add `Home.vue` inside `/resources/js/Pages/Home.vue`
 ```vue
 <template>
     <div>
         <h1>Inertiajs is {{ test }}</h1>
-
         <Link href="/about-us">Go to about us</Link>
     </div>
 </template>
-
 <script>
 import { Link } from "@inertiajs/inertia-vue3";
 export default {
@@ -112,5 +114,16 @@ valet link <mylink>
 ```js
  mix.browserSync({
     proxy: "http://inertia-starter.test",
+});
+```
+### Create routes
+`/routes/web.php`
+
+```php
+use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
+
+Route::get('/', function () {
+    return Inertia::render('Home', ['test' => 'working']);
 });
 ```
