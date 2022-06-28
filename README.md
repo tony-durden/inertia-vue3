@@ -128,3 +128,7 @@ Route::get('/', function () {
     return Inertia::render('Home', ['test' => 'working']);
 });
 ```
+## Migrate
+```shell
+php artisan migrate
+```
