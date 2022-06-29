@@ -45,19 +45,19 @@ Once generated, register the HandleInertiaRequests middleware in your `App\Http\
 ## Install dependecies
 ### Install vue 3
 ````shell
-npm install vue
+$ npm install vue
 ````
 ### Install vue loader & compiler
 ````shell
-npm install -D vue-loader vue-template-compiler
+$ npm install -D vue-loader vue-template-compiler
 ````
 ### Install the Inertia client-side adapters using NPM
 ````shell
-npm install @inertiajs/inertia @inertiajs/inertia-vue3
+$ npm install @inertiajs/inertia @inertiajs/inertia-vue3
 ````
 ### Progress indicator
 ````shell
-npm install @inertiajs/inertia @inertiajs/inertia-vue3
+$ npm install @inertiajs/inertia @inertiajs/inertia-vue3
 ````
 ## Initialize app.js
 Directory: `/resources/js/app.js`
@@ -128,7 +128,15 @@ Route::get('/', function () {
     return Inertia::render('Home', ['test' => 'working']);
 });
 ```
+### Composer
+```bash
+$ composer install
+```
 ## Migrate
 ```shell
-php artisan migrate
+$ php artisan migrate
+```
+## Key generation
+```shell
+$ php artisan key:generate
 ```
